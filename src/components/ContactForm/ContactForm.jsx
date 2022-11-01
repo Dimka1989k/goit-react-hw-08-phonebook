@@ -26,6 +26,7 @@ export class ContactForm extends Component {
     const { name, number } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
+        <p>Name</p>
         <input
           type="text"
           name="name"
@@ -36,6 +37,7 @@ export class ContactForm extends Component {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
+        <p>Number</p>
 
         <input
           type="tel"
