@@ -27,7 +27,7 @@ export class ContactForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <p>Name</p>
-        <input
+        <input          
           type="text"
           name="name"
           value={name}
