@@ -20,8 +20,10 @@ export const ContactList = ({ contacts, deleteContact }) => (
 );
 
 ContactList.propTypes = {
-  deleteContact: PropTypes.func.isRequired,
- 
+   name: PropTypes.string,
+  number: PropTypes.string,
+  id: PropTypes.string,
+  deleteContact: PropTypes.func,
+};
   
  
-};

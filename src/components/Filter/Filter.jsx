@@ -9,6 +9,7 @@ export const Filter = ({ filter, changeFilterInput }) => (
       type="text"
       name={filter}
       onChange={changeFilterInput}
+      placeholder=""
       
     />
   </label>
