@@ -1,19 +1,18 @@
 import { useState } from 'react';
-import { nanoid } from 'nanoid';
-import { useDispatch, useSelector } from 'react-redux';
-import { getContacts, addContact } from '../../redux/slice';
-
-// import PropTypes from 'prop-types';
 import './ContactForm.module.css';
+import {
+  useGetContactsQuery,
+  useAddContactMutation,
+} from '../../redux/contactsSlice';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
-  const contacts = useSelector(getContacts);
-  const dispatch = useDispatch();
+  const [phone, setNumber] = useState('');
+
+  const { data: contacts } = useGetContactsQuery();
+  const [addContact] = useAddContactMutation();
 
   const handleChange = event => {
-    // console.log(event.target.value, event.target.name);
     const { name, value } = event.target;
     switch (name) {
       case 'name':
@@ -27,22 +26,22 @@ export const ContactForm = () => {
     }
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
     const contact = {
-      id: nanoid(),
       name,
-      number,
+      phone,
     };
 
     const enterContacts = contacts.some(
       contact =>
-        (contact.name === name.toLowerCase() && contact.number === number) ||
-        contact.number === number
+        (contact.name === name.toLowerCase() && contact.phone === phone) ||
+        contact.phone === phone
     );
+
     enterContacts
-      ? alert(`${name} or ${number} is already in contacts`)
-      : dispatch(addContact(contact));
+      ? alert(`${name} or ${phone} is already in contacts`)
+      : addContact(contact);
 
     setName('');
     setNumber('');
@@ -61,11 +60,11 @@ export const ContactForm = () => {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
-       <p>Number</p>
+      <p>Number</p>
       <input
         type="tel"
         name="number"
-        value={number}
+        value={phone}
         onChange={handleChange}
         placeholder=""
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

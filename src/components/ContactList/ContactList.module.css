@@ -5,14 +5,30 @@ ul {
     padding: 0;
 }
 
+div {
+    display: flex;
+    
+}
+
 li {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin: 0;
+}
+
+h3 {
+    display: flex;
+font-size: 20px;
+    font-weight: 500;
+    margin-right: 10px;
 }
 
 p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
     font-weight: 500;
     margin-right: 10px;
