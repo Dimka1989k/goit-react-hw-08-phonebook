@@ -7,7 +7,7 @@ const Contacts = () => {
   return (
     <div className={s.view__container}>
       <h2 className={s.home__title}>
-        ENTER YOR NAME AND PHONE NUMBER
+        Enter your name and phone number
       </h2>
       <ContacstForm />
       <Filter />
