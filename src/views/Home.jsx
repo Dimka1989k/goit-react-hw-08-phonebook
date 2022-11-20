@@ -8,8 +8,8 @@ import Button from '@mui/material/Button';
 
 const HomeView = () => (
   <div className={s.view__container}>
-    <h1 className={s.home__title}>WELCOME TO THE PHONENEBOOK MY DEAR FRIEND! </h1>
-    <p className={s.please}>PLEASE MAKE YOUR CHOICE</p>
+    <h1 className={s.home__title}>WELCOME TO THE PHONEBOOK MY DEAR FRIEND! </h1>
+    <p className={s.please}>Please make your choice</p>
     <div className={s.please__container}>
     
       <NavLink  className={({ active }) => (active ? s.active : s.home__link)}
