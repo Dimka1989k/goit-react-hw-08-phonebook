@@ -1,7 +1,7 @@
 import s from '../Styles.module.css';
 
 const NotFound = () => {
-  <h2 className={s.home__title}>The page is not found</h2>;
+  <h2 className={s.home__title}>THE PAGE IS NOT FOUND</h2>;
 };
 
 export default NotFound;

@@ -8,7 +8,7 @@ export const Filter = () => {
   const { filter, setFilter } = useContacts();
   return (
     <div className={s.cont__container}>
-      <h2 className={s.home__title}>Filter contacts by name</h2>
+      <h2 className={s.home__title}>FILTER CONTACTS BY NAME</h2>
         <Box
       component="form"
       sx={{
