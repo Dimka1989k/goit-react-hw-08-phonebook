@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 
 const HomeView = () => (
   <div className={s.view__container}>
-    <h1 className={s.home__title}>WELCOME TO THE PHONEBOOK MY DEAR FRIEND! </h1>
+    <h1 className={s.home__title}>WELCOME TO THE PHONEBOOK! </h1>
     <p className={s.please}>Please make your choice</p>
     <div className={s.please__container}>
     
